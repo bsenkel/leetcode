@@ -1,10 +1,11 @@
+// Booyer Moore Voting Algorithm
+
 impl Solution {
     pub fn majority_element(nums: Vec<i32>) -> i32 {
-        // Booyer Moore Voting Algorithm
         let mut candidate = 0;
         let mut count = 0;
 
-        // find candidate
+        // find possible candidate
         for &num in &nums {
             if count == 0 {
                 candidate = num;
