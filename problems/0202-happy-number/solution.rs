@@ -1,15 +1,12 @@
 use std::collections::HashSet;
-
 impl Solution {
     pub fn is_happy(n: i32) -> bool {
         let mut seen = HashSet::new();
         let mut num = n;
-
         while num != 1 && !seen.contains(&num) {
             seen.insert(num);
             num = Self::sum_of_squares_of_digits(num);
         }
-
         num == 1
     }
 
