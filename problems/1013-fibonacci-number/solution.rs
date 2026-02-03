@@ -3,6 +3,14 @@ impl Solution {
         if n <= 1 {
             return n;
         }
-        Self::fib(n - 1) + Self::fib(n - 2)
+
+        let mut prev = 0;
+        let mut current = 1;
+        for _ in 2..=n {
+            let next = prev + current;
+            prev = current;
+            current = next;
+        }
+        current
     }
 }
