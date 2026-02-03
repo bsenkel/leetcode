@@ -1,3 +1,6 @@
+// solution 1: recursive (slow)
+// solution 2: iterative (faster)
+
 impl Solution {
     pub fn fib(n: i32) -> i32 {
         if n <= 1 {
