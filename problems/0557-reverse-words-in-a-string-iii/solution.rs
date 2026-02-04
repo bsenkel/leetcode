@@ -1,12 +1,13 @@
 impl Solution {
     pub fn reverse_words(s: String) -> String {
-        s.split(' ').map(|word| {
-            let mut chars: Vec<char> = word.chars().collect();
-            Self::reverse_string(&mut chars);
-            chars.into_iter().collect::<String>()
-        })
-        .collect::<Vec<_>>()
-        .join(" ")
+        s.split(' ')
+            .map(|word| {
+                let mut chars: Vec<char> = word.chars().collect();
+                Self::reverse_string(&mut chars);
+                chars.into_iter().collect::<String>()
+            })
+            .collect::<Vec<_>>()
+            .join(" ")
     }
 
     fn reverse_string(s: &mut Vec<char>) {
