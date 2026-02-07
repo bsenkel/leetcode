@@ -1,4 +1,4 @@
-// In each pair (a,b) the larger value is wasted, only the minimum counts.
+// In each pair (a,b) the larger value is "wasted", only the minimum counts.
 // The array needs to be sorted first, to minimize the waste across all pairs.
 // Pair numbers that are close in value together.
 
