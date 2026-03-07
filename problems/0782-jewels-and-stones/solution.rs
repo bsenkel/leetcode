@@ -1,13 +1,11 @@
+use std::collections::HashSet;
+
 impl Solution {
     pub fn num_jewels_in_stones(jewels: String, stones: String) -> i32 {
-        let mut count = 0;
+        let jewel_set: HashSet<char> = jewels.chars().collect();
 
-        for stone in stones.chars() {
-            if jewels.contains(stone){
-                count += 1;
-            }
-        }
-
-        count
+        stones.chars()
+            .filter(|stone| jewel_set.contains(stone))
+            .count() as i32
     }
 }
