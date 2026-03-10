@@ -4,7 +4,7 @@ impl Solution {
 
         for i in 0..nums.len() {
             for j in (i+1)..nums.len(){    
-                let distance = (nums[i]-nums[j]).abs();
+                let distance = nums[i].abs_diff(nums[j]) as i32;
                 if (distance == k) {
                     count += 1;
                 }
