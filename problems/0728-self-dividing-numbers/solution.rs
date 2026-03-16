@@ -5,19 +5,23 @@ impl Solution {
             .collect()
     }
 
+    // E.g. num = 128
     fn check_self_dividing(num: i32) -> bool {
-        let mut n = num;
+        let mut n = num; // n = 128
 
         while n > 0 {
-            let digit = n % 10;
-            if digit == 0 {
+            let digit = n % 10; // 128 % 10 = 8
+            
+            if digit == 0 { // a self-dividing number is not allowed to contain the digit zero
                 return false;
             }
-            if num % digit != 0 {
+            if num % digit != 0 { // 128 % 8 = 0
                 return false;
             }
-            n /= 10;
+
+            n /= 10; // n = 128 / 10 = 12
         }
+        
         true
     }
 }
