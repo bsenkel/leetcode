@@ -3,12 +3,9 @@ impl Solution {
         let mut expected = heights.clone();
         expected.sort();
 
-        let mut count = 0;
-        for i in 0..heights.len() {
-            if heights[i] != expected[i] {
-                count += 1;
-            }
-        }
-        count
+        heights.iter()
+            .zip(expected.iter())
+            .filter(|(a, b)| a != b)
+            .count() as i32
     }
 }
