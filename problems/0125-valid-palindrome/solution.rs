@@ -6,6 +6,11 @@ impl Solution {
             .map(|c| c.to_ascii_lowercase())
             .collect();
 
-        filtered.iter().zip(filtered.iter().rev()).all(|(a, b)| a == b)
+        let len = filtered.len();
+
+        filtered.iter()
+            .take(len/2)
+            .zip(filtered.iter().rev().take(len/2))
+            .all(|(a, b)| a == b)
     }
 }
