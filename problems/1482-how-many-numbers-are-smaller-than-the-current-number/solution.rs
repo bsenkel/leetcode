@@ -6,7 +6,7 @@ impl Solution {
         let mut result = Vec::with_capacity(nums.len());
 
         for num in nums {
-            let count = sorted.iter().position(|&x| x == num).unwrap();
+            let count = sorted.iter().position(|x| *x == num).unwrap();
             result.push(count as i32);
         }
 
