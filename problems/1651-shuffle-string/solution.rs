@@ -4,6 +4,10 @@ impl Solution {
         let chars: Vec<char> = s.chars().collect();
 
         for (i, &j) in indices.iter().enumerate() {
+            // result[4] = chars[0]
+            // result[5] = chars[1]
+            // result[6] = chars[2]
+            // ...
             result[j as usize] = chars[i];
         }
 
