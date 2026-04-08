@@ -1,15 +1,12 @@
 impl Solution {
     pub fn final_string(s: String) -> String {
-        let mut output = String::new();
-
-        for c in s.chars() {
+        s.chars().fold(String::new(), |mut acc, c| {
             if c == 'i' {
-                output = output.chars().rev().collect();
+                acc.chars().rev().collect()
             } else {
-                output.push(c);
+                acc.push(c);
+                acc
             }
-        }
-
-        output
+        })
     }
 }
