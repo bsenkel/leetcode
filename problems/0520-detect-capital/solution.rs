@@ -1,18 +1,8 @@
 impl Solution {
     pub fn detect_capital_use(word: String) -> bool {
-        let mut result = false;
-
-        if Self::is_all_uppercase(&word){
-            result = true;
-        }
-        else if Self::is_all_lowercase(&word){
-            result = true;
-        }
-        else if Self::is_first_letter_capital(&word){
-            result = true
-        }
-
-        result      
+        Self::is_all_uppercase(&word)
+            || Self::is_all_lowercase(&word)
+            || Self::is_first_letter_capital_rest_lowercase(&word)
     }
 
     fn is_all_uppercase(s: &str) -> bool {
@@ -23,7 +13,7 @@ impl Solution {
         s.chars().all(|c| c.is_lowercase())
     }
 
-    fn is_first_letter_capital(s: &str) -> bool {
+    fn is_first_letter_capital_rest_lowercase(s: &str) -> bool {
         let mut chars = s.chars();
         match chars.next() {
             Some(first) if first.is_uppercase() => {
