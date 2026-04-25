@@ -6,16 +6,20 @@ impl Solution {
                 if word.len() <= 2 {
                     word.to_lowercase()
                 } else {
-                    let mut chars = word.chars();
-                    match chars.next() {
-                        None => String::new(),
-                        Some(first) => {
-                            format!("{}{}", first.to_uppercase(), chars.as_str().to_lowercase())
-                        }
-                    }
+                    Self::change_first_letter_to_uppercase_rest_lowercase(&word)
                 }
             })
             .collect::<Vec<String>>()
             .join(" ")
+    }
+
+    fn change_first_letter_to_uppercase_rest_lowercase(s: &str) -> String{
+        let mut chars = s.chars();
+        match chars.next() {
+            None => String::new(),
+            Some(first) => {
+                format!("{}{}", first.to_uppercase(), chars.as_str().to_lowercase())
+            }
+        }
     }
 }
