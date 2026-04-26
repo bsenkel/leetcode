@@ -1,5 +1,4 @@
 use std::collections::HashSet;
-
 impl Solution {
     pub fn number_of_special_chars(word: String) -> i32 {
         let mut lower = HashSet::new();
@@ -12,7 +11,6 @@ impl Solution {
                 upper.insert(c.to_ascii_lowercase());
             }
         }
-
         lower.iter().filter(|c| upper.contains(c)).count() as i32
     }
 }
