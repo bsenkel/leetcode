@@ -2,8 +2,7 @@ impl Solution {
     pub fn sort_sentence(s: String) -> String {
         let words: Vec<&str> = s.split_whitespace().collect();
 
-        let n = words.len();
-        let mut result: Vec<String> = vec![String::new(); n];
+        let mut result: Vec<String> = vec![String::new(); words.len()];
 
         for word in words {
             // -1 due to the 0-based index in the result array
