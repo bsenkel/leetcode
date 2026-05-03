@@ -6,10 +6,11 @@ impl Solution {
         let mut result: Vec<String> = vec![String::new(); n];
 
         for word in words {
+            // -1 due to the 0-based index in the result array
             let pos = word.chars().last().unwrap().to_digit(10).unwrap() as usize - 1;
 
-            let word_only = &word[..word.len() - 1];
-            result[pos] = word_only.to_string();
+            // only the word
+            result[pos] = word[..word.len() - 1].to_string();
         }
         
         result.join(" ")
