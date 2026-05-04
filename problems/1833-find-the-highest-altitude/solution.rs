@@ -5,9 +5,7 @@ impl Solution {
 
         for g in gain{
             current += g;
-            if current > max_altitude{
-                max_altitude = current;
-            }
+            max_altitude = max_altitude.max(current);
         }
 
         max_altitude
