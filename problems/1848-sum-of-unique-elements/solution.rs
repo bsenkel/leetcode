@@ -3,15 +3,12 @@ impl Solution {
         let mut unique_elements = Vec::<i32>::new();
 
         for num in &nums{
-            if Self::check(&nums, *num){
+            let once = nums.iter().filter(|x| **x == *num).take(2).count() == 1;
+            if once {
                 unique_elements.push(*num);
             }
         }
 
         unique_elements.iter().sum()
-    }
-
-    fn check(vec: &Vec<i32>, value: i32) -> bool {
-        vec.iter().filter(|&&x| x == value).take(2).count() == 1
     }
 }
