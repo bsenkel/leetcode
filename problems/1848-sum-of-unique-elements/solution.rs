@@ -3,8 +3,8 @@ impl Solution {
         let mut unique_elements = Vec::<i32>::new();
 
         for num in &nums{
-            let once = nums.iter().filter(|x| **x == *num).take(2).count() == 1;
-            if once {
+            let appears_once = nums.iter().filter(|x| **x == *num).take(2).count() == 1;
+            if appears_once {
                 unique_elements.push(*num);
             }
         }
