@@ -1,21 +1,16 @@
 impl Solution {
     pub fn count_matches(items: Vec<Vec<String>>, rule_key: String, rule_value: String) -> i32 {
-        let mut matches = 0;
-
-        for item in &items {
-            if let [typ, col, name] = item.as_slice() {
-                if rule_key == "type" && rule_value == *typ{
-                    matches += 1;
+        items.iter().filter(|item| {
+            if let [typ, color, name] = item.as_slice() {
+                match rule_key.as_str() {
+                    "type" => *typ == rule_value,
+                    "color" => *color == rule_value,
+                    "name" => *name == rule_value,
+                    _ => false,
                 }
-                else if rule_key == "color" && rule_value == *col{
-                    matches += 1;
-                }
-                else if rule_key == "name" && rule_value == *name{
-                    matches += 1;
-                }
+            } else {
+                false
             }
-        }
-
-        matches
+        }).count().try_into().unwrap()
     }
 }
