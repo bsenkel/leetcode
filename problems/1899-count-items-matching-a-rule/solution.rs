@@ -3,14 +3,14 @@ impl Solution {
         let mut matches = 0;
 
         for item in &items {
-            if let [t, c, n] = item.as_slice() {
-                if rule_key == "type" && rule_value == *t{
+            if let [typ, col, name] = item.as_slice() {
+                if rule_key == "type" && rule_value == *typ{
                     matches += 1;
                 }
-                else if rule_key == "color" && rule_value == *c{
+                else if rule_key == "color" && rule_value == *col{
                     matches += 1;
                 }
-                else if rule_key == "name" && rule_value == *n{
+                else if rule_key == "name" && rule_value == *name{
                     matches += 1;
                 }
             }
