@@ -8,8 +8,8 @@ impl Solution {
                 result.push(*byte);
             } else {
                 // odd indices
-                let shift = byte - b'0';
-                let prev = result[index - 1];
+                let shift = byte - b'0'; // get the real numeric shift of the digit
+                let prev = result[index - 1]; // previous letter
                 result.push(prev + shift);
             }
         }
