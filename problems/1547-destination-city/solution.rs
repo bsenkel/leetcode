@@ -4,7 +4,7 @@ impl Solution {
 
         paths
             .iter()
-            .find(|p| !start_points.contains(p[1].as_str()))
+            .find(|p| !start_points.contains(p[1].as_str())) // is the destination city (p[1]) of the current path p no start point?
             .unwrap()[1]
             .clone()
     }
