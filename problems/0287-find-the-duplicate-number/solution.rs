@@ -6,6 +6,7 @@ impl Solution {
 
         *nums
             .iter()
-            .find(|&&i| !seen.insert(i)).unwrap()
+            .find(|&&i| !seen.insert(i))
+            .unwrap()
     }
 }
