@@ -1,25 +1,27 @@
 impl Solution {
     pub fn duplicate_zeros(arr: &mut Vec<i32>) {
         let n = arr.len();
-        let mut i = 0;
-        
-        while i < n {
-            if arr[i] == 0 {
-                let mut j = n - 1;
 
-                while j > i + 1 {
-                    arr[j] = arr[j - 1];
-                    j -= 1;
-                }
+        let zeros = arr.iter().filter(|&&x| x == 0).count();
 
-                if i + 1 < n {
-                    arr[i + 1] = 0;
-                }
+        let mut i = n as isize - 1;
+        let mut j = (n + zeros) as isize - 1;
 
-                i += 1;
+        while i >= 0 {
+            if j < n as isize {
+                arr[j as usize] = arr[i as usize];
             }
 
-            i += 1;
+            if arr[i as usize] == 0 {
+                j -= 1;
+
+                if j < n as isize {
+                    arr[j as usize] = 0;
+                }
+            }
+
+            i -= 1;
+            j -= 1;
         }
     }
 }
