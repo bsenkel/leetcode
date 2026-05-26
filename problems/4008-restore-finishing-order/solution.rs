@@ -1,17 +1,17 @@
 impl Solution {
     pub fn recover_order(order: Vec<i32>, friends: Vec<i32>) -> Vec<i32> {
-        let mut finish = Vec::with_capacity(friends.len());
+        let ids = friends.len();
+        let mut finish_order = Vec::with_capacity(ids);
 
         for participant in order{
             if friends.contains(&participant){
-                finish.push(participant);
+                finish_order.push(participant);
             }
-
-            if finish.len() == friends.len() {
+            if finish_order.len() == ids {
                 break;
             }
         }
 
-        finish
+        finish_order
     }
 }
