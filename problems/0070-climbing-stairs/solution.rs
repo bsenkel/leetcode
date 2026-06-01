@@ -4,15 +4,15 @@ impl Solution {
             return n;
         }
         
-        let mut prev2 = 1;
-        let mut prev1 = 2;
+        let mut a = 1;
+        let mut b = 2;
         
         for _ in 3..=n {
-            let current = prev1 + prev2;
-            prev2 = prev1;
-            prev1 = current;
+            let current = a + b;
+            a = b;
+            b = current;
         }
         
-        prev1
+        b
     }
 }
