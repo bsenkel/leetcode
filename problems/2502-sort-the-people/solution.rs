@@ -5,8 +5,8 @@ impl Solution {
             .zip(names.into_iter())
             .collect();
         
-        pairs.sort_by(|a, b| b.0.cmp(&a.0));
-
+        pairs.sort();
+        pairs.reverse();
         pairs.into_iter().map(|(_, name)| name).collect()
     }
 }
