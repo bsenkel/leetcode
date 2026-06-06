@@ -9,10 +9,9 @@ impl Solution {
         }
 
         if x % sum == 0 {
-            sum
+            return sum;
         }
-        else {
-            -1
-        }
+        
+        -1
     }
 }
