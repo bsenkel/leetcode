@@ -2,6 +2,7 @@ impl Solution {
     pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
         let n = matrix.len();
 
+        // transpose: swap matrix[i][j] with matrix[j][i]
         for i in 0..n {
             for j in i + 1..n {
                 let (top, bottom) = matrix.split_at_mut(j);
@@ -9,6 +10,7 @@ impl Solution {
             }
         }
 
+        // reverse each row
         for row in matrix {
             row.reverse();
         }
