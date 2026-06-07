@@ -13,7 +13,7 @@ impl Solution {
 
         freq
             .into_iter()
-            .map(|(digit, count)| (digit as i32) * (count as i32))
+            .map(|(digit, count)| digit * (count as i32))
             .sum()
     }
 }
