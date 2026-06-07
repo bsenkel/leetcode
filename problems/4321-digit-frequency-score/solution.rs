@@ -6,7 +6,7 @@ impl Solution {
         let mut x = n;
 
         while x > 0 {
-            let mut d = x % 10;
+            let d = x % 10;
             *freq.entry(d).or_insert(0) += 1;
             x /= 10;
         }
