@@ -11,6 +11,9 @@ impl Solution {
             x /= 10;
         }
 
-        freq.iter().map(|(a,b)| a * *b as i32).sum()
+        freq
+            .into_iter()
+            .map(|(digit, count)| (digit as i32) * (count as i32))
+            .sum()
     }
 }
