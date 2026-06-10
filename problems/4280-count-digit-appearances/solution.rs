@@ -4,11 +4,14 @@ impl Solution {
 
         for num in nums{
             let mut number = num;
-            while number > 0{
+            
+            while number > 0 {
                 let x = number % 10;
-                if x == digit{
+                
+                if x == digit {
                     count += 1;
                 }
+                
                 number /= 10;
             }
         }
