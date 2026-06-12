@@ -3,15 +3,16 @@ impl Solution {
         let mut sum = 0;
 
         for i in 1..=num/2 {
-            if num % i == 0{
+            if num % i == 0 {
                 sum += i;
             }
         }
 
-        if sum == num{
+        if sum == num {
             return true;
         }
-
-        false
+        else {
+            return false;
+        }
     }
 }
