@@ -4,7 +4,7 @@ impl Solution {
             n
         }
         else {
-            2*n
+            2 * n
         }
     }
 }
