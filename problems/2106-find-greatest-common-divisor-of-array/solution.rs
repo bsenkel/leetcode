@@ -3,19 +3,13 @@ impl Solution {
         let mut min = nums.iter().copied().min().unwrap();
         let mut max = nums.iter().copied().max().unwrap();
 
-        let mut rest = max;
-
-        while rest != 0 {
-            rest = max % min;
-
-            if rest == 0 {
-                return min;
-            }
+        while min != 0 {
+            let rest = max % min;
 
             max = min;
             min = rest;
         }
 
-        rest as i32
+        max
     }
 }
