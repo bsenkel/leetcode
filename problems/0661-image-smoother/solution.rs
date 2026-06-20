@@ -10,12 +10,14 @@ impl Solution {
                 let mut sum = 0;
                 let mut count = 0;
 
+                // keep the 3x3 filter within the image bounds
                 let row_start = row.saturating_sub(1);
                 let row_end = (row + 1).min(rows - 1);
 
                 let col_start = col.saturating_sub(1);
                 let col_end = (col + 1).min(cols - 1);
 
+                // sum and count all pixels within the filter bounds
                 for neighbor_row in row_start..=row_end {
                     for neighbor_col in col_start..=col_end {
                         sum += img[neighbor_row][neighbor_col];
