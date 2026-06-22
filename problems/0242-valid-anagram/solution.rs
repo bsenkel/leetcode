@@ -2,9 +2,11 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn is_anagram(s: String, t: String) -> bool {
+        if s.chars().count() != t.chars().count() { 
+            return false; 
+        }
+        
         let mut counts: HashMap<char, usize> = HashMap::new();
-
-        if s.chars().count() != t.chars().count() { return false; }
 
         for c in s.chars() {
             *counts.entry(c).or_insert(0) += 1;
