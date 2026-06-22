@@ -13,17 +13,10 @@ impl Solution {
         }
 
         for c in t.chars() {
-            if let Some(x) = counts.get_mut(&c){
-                if *x != 0{
-                    *x -= 1;
-                }
-                else {
-                    return false;
-                }
-            }
-            else{
-                return false;
-            }
+            match counts.get_mut(&c){
+                Some(x) if *x != 0 => *x -= 1,
+                _ => return false,
+            }            
         }
 
         true
