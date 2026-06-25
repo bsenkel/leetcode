@@ -9,21 +9,12 @@ impl Solution {
             *count += 1;
         }
 
-        let mut index = 0;
-        let mut found = false;
-
-        for c in s.chars() {
+        for (index, c) in s.chars().enumerate() {
             if counts.get(&c) == Some(&1) {
-                found = true;
-                break; 
+                return index as i32;
             }
-            index += 1;
         }
 
-        if !found {
-            -1
-        } else {
-            index
-        }
+        -1
     }
 }
