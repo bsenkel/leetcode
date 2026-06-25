@@ -5,8 +5,7 @@ impl Solution {
         let mut counts = HashMap::new();
 
         for c in s.chars() {
-            let mut count = counts.entry(c).or_insert(0);
-            *count += 1;
+            *counts.entry(c).or_insert(0) += 1;
         }
 
         for (index, c) in s.chars().enumerate() {
