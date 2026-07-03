@@ -3,14 +3,11 @@ impl Solution {
         let mut answer = Vec::new();
 
         for i in 1..=n {
-            if i % 3 == 0 && i % 5 == 0 {
-                answer.push("FizzBuzz".to_string());
-            } else if i % 3 == 0 {
-                answer.push("Fizz".to_string());
-            } else if i % 5 == 0 {
-                answer.push("Buzz".to_string());
-            } else {
-                answer.push(i.to_string());
+            match (i % 3, i % 5) {
+                (0, 0) => answer.push("FizzBuzz".to_string()),
+                (0, _) => answer.push("Fizz".to_string()),
+                (_, 0) => answer.push("Buzz".to_string()),
+                _ => answer.push(i.to_string()),
             }
         }
 
