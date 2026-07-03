@@ -21,18 +21,11 @@ impl Solution {
             is_heavy = true;
         }
 
-        if is_bulky && is_heavy {
-            return "Both".to_string();
+        match (is_bulky, is_heavy) {
+            (true, true) => "Both".to_string(),
+            (true, false) => "Bulky".to_string(),
+            (false, true) => "Heavy".to_string(),
+            (false, false) => "Neither".to_string(),
         }
-
-        if is_bulky && !is_heavy {
-            return "Bulky".to_string();
-        }
-
-        if !is_bulky && is_heavy {
-            return "Heavy".to_string();
-        }
-
-        "Neither".to_string()
     }
 }
