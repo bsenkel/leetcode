@@ -4,22 +4,14 @@ impl Solution {
         const VOLUME_THRESHOLD: i64 = 1_000_000_000;
         const MASS_THRESHOLD: i32 = 100;
 
-        let mut is_bulky = false;
-        let mut is_heavy = false;
-
         let volume = i64::from(length) * i64::from(width) * i64::from(height);
 
-        if length >= DIMENSION_THRESHOLD
+        let is_bulky = length >= DIMENSION_THRESHOLD
             || width >= DIMENSION_THRESHOLD
             || height >= DIMENSION_THRESHOLD
-            || volume >= VOLUME_THRESHOLD
-        {
-            is_bulky = true;
-        }
-
-        if mass >= MASS_THRESHOLD {
-            is_heavy = true;
-        }
+            || volume >= VOLUME_THRESHOLD;
+        
+        let is_heavy = mass >= MASS_THRESHOLD;
 
         match (is_bulky, is_heavy) {
             (true, true) => "Both".to_string(),
