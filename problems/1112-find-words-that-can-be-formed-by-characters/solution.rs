@@ -8,34 +8,27 @@ impl Solution {
             *characters.entry(c).or_insert(0) += 1;
         }
 
-        let mut count = 0;
+        let mut total = 0;
 
-        for w in words{
+        for word in words{
             let mut good = true;
             let mut freq = HashMap::new();
-            for c in w.chars(){
-                *freq.entry(c).or_insert(0) += 1;
-            }
-            for (key, value) in freq.iter(){
-                match characters.get(key){
-                    Some(v) => {
-                        if v < value {
-                            good = false;
-                            break;
-                        }
-                    }
-                    None => {
-                        good = false;
-                        break;
-                    }
+            
+            for c in word.chars(){
+                let count = freq.entry(c).or_insert(0);
+                *count += 1;
+
+                if *count > *characters.get(&c).unwrap_or(&0){
+                    good = false;
+                    break;
                 }
             }
 
             if good {
-                count += w.chars().count();
+                total += word.chars().count();
             }
         }
 
-        count as i32
+        total as i32
     }
 }
