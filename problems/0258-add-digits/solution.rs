@@ -1,6 +1,5 @@
 impl Solution {
     pub fn add_digits(num: i32) -> i32 {
-        
         let mut number = num;
         
         while number >= 10 {
