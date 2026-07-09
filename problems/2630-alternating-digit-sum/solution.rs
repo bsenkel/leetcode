@@ -1,19 +1,12 @@
 impl Solution {
     pub fn alternate_digit_sum(n: i32) -> i32 {
-        let number = n.to_string();
         let mut sum = 0;
-        let mut flag = true;
+        let mut sign = 1;
 
-        for c in number.chars() {
-            if flag {
-                sum += c.to_digit(10).unwrap() as i32;
-                flag = false;
-                continue;
-            }
-            if !flag {
-                sum -= c.to_digit(10).unwrap() as i32;
-                flag = true;
-            }
+        for c in n.to_string().chars() {
+            let digit = c.to_digit(10).unwrap() as i32;
+            sum += digit * sign;
+            sign *= -1;
         }
 
         sum
