@@ -4,6 +4,7 @@ impl Solution {
 
         for num in nums {
             let number = num.to_string();
+            
             for c in number.chars() {
                 let d = c.to_digit(10).unwrap();
                 digits.push(d as i32);
