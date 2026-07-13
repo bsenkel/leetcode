@@ -1,20 +1,18 @@
 impl Solution {
     pub fn count_even(num: i32) -> i32 {
-        let mut count = 0;
+        (1..=num)
+          .filter(|&n| Self::digit_sum(n) % 2 == 0)
+          .count() as i32
+    }
 
-        for number in 1..=num {
-            let mut sum = 0;
+    fn digit_sum(mut n: i32) -> i32 {
+        let mut sum = 0;
 
-            for c in number.to_string().chars() {
-                let digit = c.to_digit(10).unwrap();
-                sum += digit as i32;
-            }
-
-            if sum % 2 == 0 {
-                count += 1;
-            }
+        while n > 0 {
+            sum += n % 10;
+            n /= 10;
         }
 
-        count
+        sum
     }
 }
