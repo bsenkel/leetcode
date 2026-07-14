@@ -1,4 +1,5 @@
 use std::collections::HashSet;
+
 impl Solution {
     pub fn find_words(words: Vec<String>) -> Vec<String> {
         let rows: [HashSet<char>; 3] = [
