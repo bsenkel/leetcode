@@ -4,11 +4,9 @@ impl Solution {
         let max = candies.iter().max().unwrap();
 
         for i in candies.iter() {
-            let extra = i + extra_candies;
-            if extra >= *max {
+            if i + extra_candies >= *max {
                 output.push(true);
-            }
-            else {
+            } else {
                 output.push(false);
             }
         }
