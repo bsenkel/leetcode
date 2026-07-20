@@ -5,11 +5,12 @@ impl Solution {
 
         for i in 1..=n {
             let mut sum: i32 = 0;
-            for c in i.to_string().chars() {
-                let digit = c.to_digit(10).unwrap();
-                sum += digit as i32;
+            let mut x = i;
+            while x > 0 {
+                sum += x % 10;
+                x /= 10;
             }
-
+            
             *groups.entry(sum).or_insert(0) += 1;
         }
 
