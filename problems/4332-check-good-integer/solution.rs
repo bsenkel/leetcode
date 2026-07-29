@@ -1,17 +1,17 @@
 impl Solution {
     pub fn check_good_integer(n: i32) -> bool {
-        let mut digitSum = 0;
-        let mut squareSum = 0;
+        let mut digit_sum = 0;
+        let mut square_sum = 0;
 
         let mut number = n;
 
         while number != 0 {
             let n = number % 10;
-            digitSum += n;
-            squareSum += n * n;
+            digit_sum += n;
+            square_sum += n * n;
             number /= 10;
         }
 
-        squareSum - digitSum >= 50   
+        square_sum - digit_sum >= 50   
     }
 }
