@@ -6,13 +6,12 @@ impl Solution {
             let mut sum = 0;
             let mut n = e;
             while n != 0 {
-                let d = n % 10;
+                sum += n % 10;
                 n /= 10;
-                sum += d;
             }
             sums.push(sum);
         }
 
-        *sums.iter().min().unwrap() as i32
+        *sums.iter().min().unwrap()
     }
 }
