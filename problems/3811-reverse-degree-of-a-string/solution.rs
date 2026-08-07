@@ -8,7 +8,10 @@ impl Solution {
 
         let mut sum = 0;
         for (index, c) in s.chars().enumerate() {
-            sum += lookup.get(&c).unwrap() * (index as i32 + 1);
+            let index = index as i32 + 1;
+            if let Some(value) = lookup.get(&c) {
+                sum += value * index;
+            }
         }
 
         sum
