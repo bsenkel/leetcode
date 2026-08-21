@@ -6,21 +6,10 @@ impl Solution {
             return Vec::new();
         }
 
-        let map: HashMap<char, &str> = HashMap::from([
-            ('2', "abc"),
-            ('3', "def"),
-            ('4', "ghi"),
-            ('5', "jkl"),
-            ('6', "mno"),
-            ('7', "pqrs"),
-            ('8', "tuv"),
-            ('9', "wxyz"),
-        ]);
-
         let mut result: Vec<String> = vec![String::new()];
 
         for digit in digits.chars() {
-            let letters = map.get(&digit).unwrap();
+            let letters = Self::digit_to_letters(digit);
             let mut next: Vec<String> = Vec::new();
 
             for combo in &result {
@@ -35,5 +24,19 @@ impl Solution {
         }
 
         result
+    }
+
+    fn digit_to_letters(digit: char) -> &'static str {
+        match digit {
+            '2' => "abc",
+            '3' => "def",
+            '4' => "ghi",
+            '5' => "jkl",
+            '6' => "mno",
+            '7' => "pqrs",
+            '8' => "tuv",
+            '9' => "wxyz",
+            _ => "",
+        }
     }
 }
